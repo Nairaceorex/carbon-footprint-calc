@@ -16,9 +16,7 @@ function App() {
       <nav className="bg-green-600 text-white p-4">
         <div className="container mx-auto flex justify-between">
           <div className="space-x-4">
-            <NavLink to="/calculator" className={({ isActive }) => isActive ? 'font-bold' : ''}>
-              Calculator
-            </NavLink>
+            
             {!token ? (
               <>
                 <NavLink to="/register" className={({ isActive }) => isActive ? 'font-bold' : ''}>
@@ -29,9 +27,15 @@ function App() {
                 </NavLink>
               </>
             ) : (
-              <button onClick={handleLogout} className="hover:underline">
+                <>
+                    <NavLink to="/calculator" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+              Calculator
+            </NavLink>
+                <button onClick={handleLogout} className="hover:underline">
                 Logout
               </button>
+                </>
+              
             )}
           </div>
         </div>
